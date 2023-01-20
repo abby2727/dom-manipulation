@@ -1,4 +1,3 @@
-// getElementsByClassName use when woring with array elements
 let items = document.getElementsByClassName('list-group-item');
 console.log(items);
 
