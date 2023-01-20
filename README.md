@@ -1,4 +1,4 @@
-### DOM Manipulation
+### <div align="center">DOM Manipulation</div>
 
 <hr style="border:2px solid gray">
 Manipulating web page's content and structure with plain JavaScript. <br>
