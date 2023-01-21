@@ -24,7 +24,7 @@ listItemLast.style.color = 'yellow';
 let listItemSecond = document.querySelector('.list-group-item:nth-child(2)');
 listItemSecond.style.color = 'blue';
 
-let odd = document.querySelectorAll('li:nth-child(odd)');
+let odd = document.querySelectorAll('li:nth-child(even)');
 for (let i = 0; i < odd.length; i++) {
     odd[i].style.backgroundColor = 'lightGray';
 }
