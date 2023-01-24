@@ -51,20 +51,39 @@
 
 // * Create Element 
 
-let div = document.createElement('div');
+// let div = document.createElement('div');
 
-div.id = 'myDivId';
+// div.id = 'myDivId';
 
 // Create text node
-let divTxt = document.createTextNode('Hello, world!');
-div.appendChild(divTxt);
+// let divTxt = document.createTextNode('Hello, world!');
+// div.appendChild(divTxt);
 
-let container = document.querySelector('.container #main');
-let h2 = document.querySelector('#main h2');
+// let container = document.querySelector('.container #main');
+// let h2 = document.querySelector('#main h2');
 
 // console.log(div);
-container.insertBefore(div, h2);
+// container.insertBefore(div, h2);
 
-let changeMe = document.getElementById('myDivId');
+// let changeMe = document.getElementById('myDivId');
 // console.log(changeMe);
-changeMe.style.backgroundColor = 'blue';
+// changeMe.style.backgroundColor = 'blue';
+
+// * Part 3
+
+// let myButton = document.getElementById('myButton');
+// myButton.addEventListener('click', myFunction);
+
+// function myFunction(e) {
+    // console.log(e.target.id);
+    // output.textContent = e.target.id;
+// }
+
+
+let inputItem = document.getElementById('item');
+inputItem.addEventListener('keydown', myFunction);
+
+// function myFunction(e) {
+    // console.log(e.target.value);
+    // itemOutput.textContent = e.target.value;
+// }
