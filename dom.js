@@ -2,6 +2,7 @@
 
 let form = document.getElementById('addForm');
 let parentList = document.getElementById('items');
+// console.log(form);
 
 form.addEventListener('submit', addItem);
 
@@ -25,4 +26,16 @@ function addItem(e) {
     } else {
         message.style.display = 'block';
     }
+}
+
+let buttons = document.querySelectorAll('button');
+// console.log(buttons);
+
+for (let i = 0; i < buttons.length; i++) {
+    // buttons[i].addEventListener('click', deleteItem);
+    buttons[i].addEventListener('click', deleteItem.bind(null, i));
+}
+
+function deleteItem(index) {
+    alert(index);
 }

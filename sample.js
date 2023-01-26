@@ -1,6 +1,7 @@
 // * Part 1
 
-// let items = document.getElementsByClassName('list-group-item');
+// let items = document.getElementsByClassName('list-group-item');  // ? return HTMLCollection
+// let items = document.querySelector('list-group-item');           // ? return null
 // console.log(items);
 
 // items[2].style.fontWeight = 'bold';
@@ -88,4 +89,14 @@
 // function myFunction(e) {
     // console.log(e.target.value);
     // itemOutput.textContent = e.target.value;
+// }
+
+// Experiment
+
+// let listGroupItem = document.getElementsByClassName('list-group-item');  // ? return HTMLCollection
+// let listGroupItem = document.querySelectorAll('.list-group-item');       // ? return NodeList
+// console.log(listGroupItem);
+
+// for (let i = 0; i < listGroupItem.length; i++) {
+//     listGroupItem[i].style.color = 'blue';
 // }
