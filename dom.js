@@ -37,5 +37,7 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 function deleteItem(index) {
-    alert(index);
+    // alert(index);
+    buttons[index].remove();
+    // buttons = document.querySelectorAll('button');
 }
