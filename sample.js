@@ -100,3 +100,15 @@
 // for (let i = 0; i < listGroupItem.length; i++) {
 //     listGroupItem[i].style.color = 'blue';
 // }
+
+// console.log(document.querySelectorAll('div'));
+
+// let div = document.querySelectorAll('div');     // NodeList (Applicable for forEach)
+// let div = document.getElementsByTagName('div'); // HTMLCollection (Not applicable for forEach) 
+
+// div.forEach(function(value) {
+//     value.style.color = 'green';
+// });
+// for (let i = 0; i < div.length; i++) {
+// div[i].style.color = 'red';
+// }
