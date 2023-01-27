@@ -1,25 +1,31 @@
-// * Part 4
-
 let form = document.getElementById('addForm');
 let parentList = document.getElementById('items');
-// console.log(form);
+let search = document.getElementById('filter');
 
 form.addEventListener('submit', addItem);
+parentList.addEventListener('click', removeItem);
+search.addEventListener('keyup', searchItem);
 
 function addItem(e) {
     e.preventDefault();
-    let childList = document.querySelector('#item');
+    let inputList = document.querySelector('#item');
     let message = document.querySelector('#message');
 
-    if (childList.value !== '') {
+    if (inputList.value !== '') {
+        // Create element
         let li = document.createElement('li');
-        let button = document.createElement('button');
+        let deleteBtn = document.createElement('deleteBtn');
 
         li.className = 'list-group-item';
-        li.appendChild(document.createTextNode(childList.value));
-        li.appendChild(button);
-        button.className = 'btn btn-sm btn-danger float-end delete';
-        button.appendChild(document.createTextNode('X'));
+        li.appendChild(document.createTextNode(inputList.value));
+
+        deleteBtn.className = 'btn btn-sm btn-danger float-end delete';
+        deleteBtn.appendChild(document.createTextNode('X'));
+
+        // Append button to li
+        li.appendChild(deleteBtn);
+
+        // Append li to parentList (ul)
         parentList.appendChild(li);
 
         message.style.display = 'none';
@@ -28,15 +34,32 @@ function addItem(e) {
     }
 }
 
-let buttons = document.querySelectorAll('button');
-// console.log(buttons);
+// let deleteBtns = document.querySelectorAll('button');
 
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', deleteItem.bind(null, i));
+// for (let i = 0; i < deleteBtns.length; i++) {
+//     deleteBtns[i].addEventListener('click', deleteItem.bind(null, i));
+// }
+
+// function deleteItem(index) {
+//     deleteBtns[index].parentElement.remove();
+// }
+
+function removeItem(e) {
+    if (e.target.classList.contains('delete')) {
+        if (confirm('Are you sure you want to delete this?')) {
+            let li = e.target.parentElement;
+            parentList.removeChild(li);
+        }
+    }
 }
 
-function deleteItem(index) {
-    // alert(index);
-    buttons[index].remove();
-    // buttons = document.querySelectorAll('button');
+function searchItem(e) {
+    let text = e.target.value.toLowerCase();
+    // console.log(text);
+    let items = parentList.getElementsByTagName('li');
+    // console.log(items);
+    Array.from(items).forEach(function (value) {
+        let itemName = value.firstChild.textContent;
+        console.log(itemName);
+    });
 }
