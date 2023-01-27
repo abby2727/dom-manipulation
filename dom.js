@@ -34,16 +34,6 @@ function addItem(e) {
     }
 }
 
-// let deleteBtns = document.querySelectorAll('button');
-
-// for (let i = 0; i < deleteBtns.length; i++) {
-//     deleteBtns[i].addEventListener('click', deleteItem.bind(null, i));
-// }
-
-// function deleteItem(index) {
-//     deleteBtns[index].parentElement.remove();
-// }
-
 function removeItem(e) {
     if (e.target.classList.contains('delete')) {
         if (confirm('Are you sure you want to delete this?')) {
@@ -55,11 +45,13 @@ function removeItem(e) {
 
 function searchItem(e) {
     let text = e.target.value.toLowerCase();
-    // console.log(text);
     let items = parentList.getElementsByTagName('li');
-    // console.log(items);
-    Array.from(items).forEach(function (value) {
-        let itemName = value.firstChild.textContent;
-        console.log(itemName);
+    Array.from(items).forEach(function (item) {
+        let itemName = item.firstChild.textContent;
+        if (itemName.toLowerCase().indexOf(text) != -1) {   // if found
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
     });
 }
