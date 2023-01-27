@@ -11,7 +11,7 @@ function addItem(e) {
     let inputList = document.querySelector('#item');
     let message = document.querySelector('#message');
 
-    if (inputList.value !== '') {
+    if (inputList.value !== '') {   // if not empty string
         // Create element
         let li = document.createElement('li');
         let deleteBtn = document.createElement('deleteBtn');
