@@ -46,12 +46,24 @@ function removeItem(e) {
 function searchItem(e) {
     let text = e.target.value.toLowerCase();
     let items = parentList.getElementsByTagName('li');
+    let emptyLabel = document.getElementById('emptyLabel');
+
+    let noResult = true;
+
     Array.from(items).forEach(function (item) {
         let itemName = item.firstChild.textContent;
         if (itemName.toLowerCase().indexOf(text) != -1) {   // if found
             item.style.display = 'block';
+            emptyLabel.style.display = 'none';
+            noResult = false;
         } else {
             item.style.display = 'none';
         }
     });
+
+    if (noResult) {
+        emptyLabel.style.display = 'block';
+    } else {
+        emptyLabel.style.display = 'none';
+    }
 }
