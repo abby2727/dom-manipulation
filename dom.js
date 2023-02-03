@@ -11,7 +11,7 @@ function addItem(e) {
     let inputList = document.querySelector('#item');
     let message = document.querySelector('#message');
 
-    if (inputList.value !== '') {   // if not empty string
+    if (inputList.value !== '') {   // if string is not empty
         // Create element
         let li = document.createElement('li');
         let deleteBtn = document.createElement('deleteBtn');
@@ -29,6 +29,7 @@ function addItem(e) {
         parentList.appendChild(li);
 
         message.style.display = 'none';
+        inputList.value = '';
     } else {
         message.style.display = 'block';
     }
