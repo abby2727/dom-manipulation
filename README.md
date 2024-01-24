@@ -9,4 +9,4 @@ Document Object Model (DOM) is a programming interface for HTML and XML document
 
 <hr style="border:2px solid gray">
 Link: <br>
-https://abby2727.github.io/dom-manipulation/
+https://abby2727.github.io/dom-manipulation/traversy-media-crash-course
